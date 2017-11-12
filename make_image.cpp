@@ -64,9 +64,14 @@ Image download_and_open_image(Frame const &frame)
     return Image(Blob(data.data(), data.size()));
 }
 
+// top_image_base64.cpp
+extern const char * const TOP_IMAGE_BASE64;
+
 int main()
 {
-    Image top_image("guys-want-one-thing.png");
+    Blob top_image_blob;
+    top_image_blob.base64(TOP_IMAGE_BASE64);
+    Image top_image(top_image_blob);
 
     auto frame_json = fetch_frinkiac_random_json();
     assert(frame_json.size());
