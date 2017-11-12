@@ -6,7 +6,7 @@
 <meta property="og:description" content="Streamlining dead memes since 2016. Refresh the page to become a professional shitposter." />
 <meta property="og:site_name" content="Chris Bush's Cool Website" />
 </head>
-<body style="width:100%;height:100%" >
+<body style="margin:0px;width:100%;height:100%" >
 <?php
 
 $blob64 = exec("../../guys/make_image");
@@ -17,5 +17,10 @@ $blob64 = exec("../../guys/make_image");
 <a href="data:image/png;base64,<?php echo $blob64; ?>" >
 <img style="max-height:90%;width:auto" src="data:image/png;base64,<?php echo $blob64; ?>" />
 </a>
+<br /><br />
 </center>
-
+<p style="color:#888;margin:10pt;font-size:10pt;">random images from <a href="https://frinkiac.com/" target=".">frinkiac</a><br />
+let's say inspired by
+<a href="https://www.facebook.com/groups/shitpostingsimpsons" target="." >simpsons shitposting</a><br />
+generator by <a href="https://twitter.com/starchfacts" target="." >@starchfacts</a><br />
+</p>
