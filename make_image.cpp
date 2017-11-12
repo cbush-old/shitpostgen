@@ -28,6 +28,11 @@ std::string command_line(const char *command)
     return result;
 }
 
+std::string command_line(const std::string &command)
+{
+    return command_line(command.c_str());
+}
+
 std::string fetch_frinkiac_random_json()
 {
     return command_line("curl -s https://frinkiac.com/api/random");
@@ -55,11 +60,8 @@ struct Frame
 
 Image download_and_open_image(Frame const &frame)
 {
-    auto path = "tmp/" + frame.id + ".jpg";
-    std::stringstream command;
-    command << "curl -s " << frame.url << " > " << path;
-    command_line(command.str().c_str());
-    return Image(path);
+    auto data = command_line("curl -s " + frame.url);
+    return Image(Blob(data.data(), data.size()));
 }
 
 int main()
@@ -85,12 +87,11 @@ int main()
     result.composite(top_image, 0, 0, OverCompositeOp);
     result.composite(bottom_image, -5, top_image.rows(), OverCompositeOp);
 
-    auto result_path = "img/" + frame.id + ".jpg";
-    result.write(result_path);
+    Blob blob;
+    result.magick("JPEG");
+    result.write(&blob);
 
-    command_line(std::string("rm tmp/" + frame.id + ".jpg").c_str());
-
-    std::cout << result_path << '\n';
+    std::cout << blob.base64();
     return 0;
 }
 

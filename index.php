@@ -9,11 +9,13 @@
 <body style="width:100%;height:100%" >
 <?php
 
-$path = exec("../../guys/make_image");
+$blob64 = exec("../../guys/make_image");
 
 ?>
 <center>
 <h1><a href="?browserHistoryToken=<?php echo substr(md5(microtime()), 0, 6); ?>" >Roll again</a></h1>
-<a href="<?php echo $path; ?>" ><img style="max-height:90%;width:auto" src="<?php echo $path; ?>" /></a><br/>
+<a href="data:image/png;base64,<?php echo $blob64; ?>" >
+<img style="max-height:90%;width:auto" src="data:image/png;base64,<?php echo $blob64; ?>" />
+</a>
 </center>
 
