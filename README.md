@@ -29,6 +29,15 @@ Do I really need to explain? It's a shitpost generator.
 - The bottom image is resized a bit to match the top image -- I could have scaled the top image to match the bottom width, but I find it funnier this way. Also Frinkiac tends to have black vertical bars on both sides of the frame, hence the -5 pixel offset when pasting the image. 
 - Outputs the Image as base64-encoded jpeg.
 
+## Replacing the top image
+
+```$ echo "extern const char * const TOP_IMAGE_BASE64 = \"`base64 -w 0 < NEW_IMAGE`\";" > top_image_base64.cpp```
+
+where `NEW_IMAGE` is the path to your new image in any format supported by ImageMagick.
+
+Then recompile.
+
+
 ## Web frontend layout
 
 The frontend is a simple php script that executes `make_image` and puts the base64-encoded image data directly into the html.

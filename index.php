@@ -36,4 +36,5 @@ $blob64 = exec("../../guys/make_image");
 let's say inspired by
 <a href="https://www.facebook.com/groups/shitpostingsimpsons" target="." >simpsons shitposting</a><br />
 generator by <a href="https://twitter.com/starchfacts" target="." >@starchfacts</a><br />
+fork me on <a href="https://github.com/crust/shitpostgen" target="." >github</a><br/>
 </p>
