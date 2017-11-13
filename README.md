@@ -26,7 +26,7 @@ Do I really need to explain? It's a shitpost generator.
 - Uses popen() to run shell commands (curl) because I was lazy
 - Fetches a random frame from Frinkiac using curl
 - Uses ImageMagick to paste the frame below the top image. The top image is stored in top_image_base64.cpp as base64-encoded string.
-- The bottom image is resized a bit to match the top image -- I could have scaled the top image to match the bottom width, but I find it funnier this way. Also Frinkiac tends to have black vertical bars on both sides of the frame, hence the -5 pixel offset when pasting the image. 
+- The top image is resized a bit to match the bottom image. Frinkiac tends to have black vertical bars on both sides of the frame, hence the pixel offset when pasting the bottom image.
 - Outputs the Image as base64-encoded jpeg.
 
 ## Replacing the top image
