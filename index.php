@@ -1,10 +1,23 @@
+<?php
+
+$description = "Streamlining dead memes since 2016. Refresh the page to become a professional shitposter.";
+$image = "http://gash.ca/guys/header.png";
+$title = "Shitpost Generator";
+
+?>
 <head>
 <title>Shitpost Generator</title>
-<meta property="og:image" content="http://gash.ca/guys/header.png" />
-<meta property="og:title" content="Shitpost Generator" />
+<meta property="og:image" content="<?php echo $image; ?>" />
+<meta property="og:title" content="<?php echo $title; ?>" />
 <meta property="og:url" content="http://gash.ca/guys/" />
-<meta property="og:description" content="Streamlining dead memes since 2016. Refresh the page to become a professional shitposter." />
+<meta property="og:description" content="<?php echo $description; ?>" />
 <meta property="og:site_name" content="Chris Bush's Cool Website" />
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:site" content="@starchfacts" />
+<meta property="twitter:creator" content="@starchfacts" />
+<meta property="twitter:description" content="<?php echo $description; ?>" />
+<meta property="twitter:title" content="<?php echo $title; ?>" />
+
 </head>
 <body style="margin:0px;width:100%;height:100%" >
 <?php
