@@ -1,7 +1,7 @@
 <?php
 
 $description = "Streamlining dead memes since 2016. Refresh the page to become a professional shitposter.";
-$image = "http://gash.ca/guys/header.png";
+$image = "http://gash.ca/grimes/header.png";
 $title = "Shitpost Generator";
 
 ?>
@@ -22,7 +22,7 @@ $title = "Shitpost Generator";
 <body style="margin:0px;width:100%;height:100%" >
 <?php
 
-$blob64 = exec("../../guys/make_image");
+$blob64 = exec("cd ../../grimes && ./make_image");
 
 ?>
 <center>
